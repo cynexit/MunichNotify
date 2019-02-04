@@ -1,0 +1,59 @@
+# set a start and stop date for the notify function
+
+notifyStart = "2019-02-21"
+notifyStop = "2019-03-25"
+
+# if you want to receive an email if a appointment
+# is within range set the values below
+
+smtpServer = ""
+smtpUser = ""
+smtpPassword = ""
+fromAddr = ""
+toAddr = ""
+
+# adjust services dict to your needs:
+# mark services you want to book with either 0, 1, or 2 depending
+# on the amount (e.g. if you want to order two passports at once)
+
+services = {}
+services["An- oder Ummeldung - Einzelperson"] = "0"
+services["An- oder Ummeldung - Einzelperson mit eigenen Fahrzeugen"] = "0"
+services["An- oder Ummeldung - Familie"] = "0"
+services["An- oder Ummeldung - Familie mit eigenen Fahrzeugen"] = "0"
+services["Eintragung Übermittlungssperre"] = "0"
+services["Meldebescheinigung"] = "0"
+services["Haushaltsbescheinigung"] = "0"
+services["Melderegisterauskunft"] = "0"
+services["Abmeldung (Einzelperson oder Familie)"] = "0"
+services["Familienstandsänderung/ Namensänderung"] = "0"
+services["Antrag Personalausweis"] = "0"
+services["Antrag Reisepass/Expressreisepass"] = "0"
+services["Antrag vorläufiger Reisepass"] = "0"
+services["Antrag oder Verlängerung/Aktualisierung Kinderreisepass"] = "0"
+services["Ausweisdokumente - Familie (Minderjährige und deren gesetzliche Vertreter)"] = "0"
+services["Nachträgliche Anschriftenänderung Personalausweis/Reisepass/eAT"] = "0"
+services["Nachträgliches Einschalten eID / Nachträgliche Änderung PIN"] = "0"
+services["Widerruf der Verlust- oder Diebstahlanzeige von Personalausweis oder Reisepass"] = "0"
+services["Verlust- oder  Diebstahlanzeige von Personalausweis"] = "0"
+services["Verlust- oder  Diebstahlanzeige von Reisepass"] = "0"
+services["Gewerbeummeldung (Adressänderung innerhalb Münchens)"] = "0"
+services["Gewerbeabmeldung"] = "0"
+services["Führungszeugnis beantragen"] = "0"
+services["Gewerbezentralregisterauskunft beantragen – natürliche Person"] = "0"
+services["Gewerbezentralregisterauskunft beantragen – juristische Person"] = "0"
+services["Bis zu 5 Beglaubigungen Unterschrift"] = "0"
+services["Bis zu 5 Beglaubigungen Dokument"] = "0"
+services["Bis zu 20 Beglaubigungen"] = "0"
+services["Fabrikneues Fahrzeug anmelden (mit deutschen Fahrzeugpapieren und CoC)"] = "0"
+services["Fahrzeug wieder anmelden"] = "0"
+services["Fahrzeug umschreiben von außerhalb nach München"] = "0"
+services["Fahrzeug umschreiben innerhalb Münchens"] = "0"
+services["Fahrzeug außer Betrieb setzen"] = "0"
+services["Saisonkennzeichen beantragen"] = "0"
+services["Kurzzeitkennzeichen beantragen"] = "0"
+services["Umweltplakette/ Feinstaubplakette für Umweltzone beantragen"] = "0"
+services["Adressänderung in Fahrzeugpapiere eintragen lassen"] = "0"
+services["Namensänderung in Fahrzeugpapiere eintragen lassen"] = "0"
+services["Verlust oder Diebstahl der Zulassungsbescheinigung Teil I"] = "0"
+
