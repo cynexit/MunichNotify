@@ -49,6 +49,19 @@ class MunichNotify():
 		message = header + msg
 		message = message.encode("ascii","ignore")
 
+		# make sure we only send an email if the data
+		# actually changed
+		try:
+			with open('.lastmail', 'rb') as f:
+				if f.read() == message:
+					return
+		except FileNotFoundError:
+			pass # no file -> no previous mail
+
+		# store new message for comparision later
+		with open('.lastmail', 'wb') as f:
+			f.write(message)
+
 		server = smtplib.SMTP(config.smtpServer)
 		server.starttls()
 		server.login(config.smtpUser, config.smtpPassword)
