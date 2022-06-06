@@ -106,12 +106,8 @@ class MunichOnlineAppointments():
 		# request page with service selection
 		page_services = self.sess.get(url, params={"loc": "BB"})
 
-		# extract csrf form value
-		csrf = re.search('name="__ncforminfo" value="(.+?)"/>', page_services.text).group(1)
-
 		payload = self.servicesToPayload(services)
 		payload["step"] = "WEB_APPOINT_SEARCH_BY_CASETYPES"
-		payload["__ncforminfo"] = csrf
 
 
 		# get list of possible appointments from outer branches
@@ -122,14 +118,13 @@ class MunichOnlineAppointments():
 		
 		# get list of possible appointments from ruppertstr
 		cts = self.servicesToCTS(services)
-		del payload["__ncforminfo"]
 
 		# for some strange reason this request is necessary, probaply session shenanigans ¯\_(ツ)_/¯
-		url = "https://www12.muenchen.de/termin/"
+		url = "https://www22.muenchen.de/kvr/termin/"
 		self.sess.get(url, params={"cts": cts})
 
 		# get the actual list
-		url = "https://www12.muenchen.de/termin/index.php"
+		url = "https://www22.muenchen.de/kvr/termin/index.php"
 		page_appointments_ruppertstr = self.sess.post(url, params={"cts": cts}, data=payload)
 
 		apts_ruppertstr = self.extractAppointments(page_appointments_ruppertstr.text)
